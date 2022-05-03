@@ -1,0 +1,21 @@
+version: '0.1'
+
+services:
+  spigot:
+    image: spigot_rasp_juice:1_18
+    container_name: spigot
+    ports:
+      - 25565:25565
+      - 4711:4711
+    networks: 
+      - backend
+  py3minepi:
+   image: py3minepi
+   container_name: py3minepi
+       networks: 
+      - backend
+networks:
+  backend:
+    driver: "bridge"
+
+
